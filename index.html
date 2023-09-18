@@ -3,30 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeu du Jardin</title>
+    <title>Mariage de Melissa et Adrien</title>
     <style>
-        #gameArea {
-            position: relative;
-            width: 800px;
-            height: 600px;
-            background-image: url('logo entreprise.png');
-            overflow: hidden;
+        body {
+            background-image: url('jardin.png');
+            background-size: cover;
+            font-family: Arial, sans-serif;
         }
-        .gameItem {
+        #mariee {
             position: absolute;
+            right: 10%;
+            top: 20%;
+            width: 200px; /* Ajustez selon la taille de votre image */
+            height: auto;
         }
     </style>
 </head>
 <body>
 
-<div id="gameArea">
-    <img src="logo entreprise.png" alt="Maison" class="gameItem" id="house" style="top: 50px; left: 100px;">
-    <img src="logo entreprise.png" alt="Porte" class="gameItem" id="door" style="top: 150px; left: 200px;">
-    <img src="logo entreprise.png" alt="Niche" class="gameItem" id="doghouse" style="top: 400px; left: 600px;">
-    <img src="logo entreprise.png" alt="Chien" class="gameItem" id="dog" style="top: 450px; left: 650px;">
-</div>
-
-<audio id="growlSound" src="chemin_vers_votre_son_de_grognement.mp3"></audio>
+<img src="mariee.png" alt="Melissa, la mariée" id="mariee">
 
 <script src="script.js"></script>
 
