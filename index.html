@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Escape Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Escape Game</h1>
+<p>Vous êtes enfermé dans une pièce. Pour vous échapper, trouvez le code à 4 chiffres !</p>
+
+<input type="text" id="codeInput" placeholder="Entrez le code ici">
+<button onclick="checkCode()">Essayer le code</button>
+
+<p id="result"></p>
+
+<script src="script.js"></script>
+
+</body>
+</html>
