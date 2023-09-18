@@ -3,31 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini Escape Game</title>
+    <title>Jeu du Jardin</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f4f4f4;
+        #gameArea {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-image: url('logo entreprise.png');
+            overflow: hidden;
         }
-        #result {
-            margin-top: 20px;
-            font-weight: bold;
+        .gameItem {
+            position: absolute;
         }
     </style>
 </head>
 <body>
 
-<h1>Escape Game</h1>
-<p>Vous êtes enfermé dans une pièce. Pour vous échapper, trouvez le code à 4 chiffres !</p>
+<div id="gameArea">
+    <img src="chemin_vers_votre_image_de_maison.jpg" alt="Maison" class="gameItem" id="house" style="top: 50px; left: 100px;">
+    <img src="chemin_vers_votre_image_de_porte.jpg" alt="Porte" class="gameItem" id="door" style="top: 150px; left: 200px;">
+    <img src="chemin_vers_votre_image_de_niche.jpg" alt="Niche" class="gameItem" id="doghouse" style="top: 400px; left: 600px;">
+    <img src="chemin_vers_votre_image_de_chien.jpg" alt="Chien" class="gameItem" id="dog" style="top: 450px; left: 650px;">
+</div>
 
-<input type="text" id="codeInput" placeholder="Entrez le code ici">
-<button onclick="checkCode()">Essayer le code</button>
-
-<p id="result"></p>
+<audio id="growlSound" src="chemin_vers_votre_son_de_grognement.mp3"></audio>
 
 <script src="script.js"></script>
 
 </body>
 </html>
+
