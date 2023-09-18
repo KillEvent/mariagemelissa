@@ -1,25 +1,22 @@
-const dog = document.getElementById('dog');
-const door = document.getElementById('door');
-const growlSound = document.getElementById('growlSound');
+window.onload = function() {
+    // Première boîte de dialogue
+    alert("Bienvenue au mariage de Melissa et Adrien!");
 
-let hasPetTheDog = false;
+    // Deuxième boîte de dialogue
+    alert("Melissa : Quelqu'un a volé mon collier!");
 
-dog.addEventListener('mouseover', function() {
-    if (!hasPetTheDog) {
-        growlSound.play();
-    }
-});
+    // Troisième boîte de dialogue
+    alert("Melissa : Je suis vraiment paniquée...");
 
-dog.addEventListener('click', function() {
-    hasPetTheDog = true;
-    alert("Vous avez caressé le chien. Il semble plus content maintenant.");
-    dog.src = "chemin_vers_votre_image_de_chien_content.jpg"; // Changez l'image du chien pour montrer qu'il est content
-});
+    // Quatrième boîte de dialogue
+    const morseCode = "... --- ..."; // Ceci est un exemple de code Morse pour "SOS". Remplacez-le par le code que vous souhaitez utiliser.
+    const userInput = prompt("Melissa : On m'a donné ce code secret en Morse : " + morseCode + ". Pouvez-vous le traduire pour moi?");
 
-door.addEventListener('click', function() {
-    if (hasPetTheDog) {
-        alert("Bravo! Vous avez su qu'il fallait caresser le chien pour entrer dans la maison.");
+    // Vérifiez la réponse de l'utilisateur
+    if (userInput === "SOS") { // Remplacez "SOS" par la traduction correcte de votre code Morse.
+        alert("Melissa : C'est exact! Merci beaucoup pour votre aide.");
     } else {
-        alert("Le chien ne semble pas content. Peut-être devriez-vous essayer de le caresser d'abord.");
+        alert("Melissa : Ce n'est pas la bonne traduction. Pouvez-vous réessayer?");
+        // Vous pouvez ajouter une boucle ici pour permettre à l'utilisateur de réessayer jusqu'à ce qu'il obtienne la bonne réponse.
     }
-});
+}
