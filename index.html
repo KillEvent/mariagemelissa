@@ -135,7 +135,7 @@
 
   <div>
     <label for="gameType">Type de jeu :</label>
-        <select id="gameType">
+        <select id="gameType" name="gameType">
             <option value="59.50">Jeu numérique (59,50€)</option>
             <option value="189.90">Jeu papier (189,90€)</option>
         </select>
@@ -146,7 +146,7 @@
 
     <div>
         <label for="scenario">Scénario choisi :</label>
-        <select id="scenario">
+        <select id="scenario" name="scenario">
             <option value="0">Transylvanie</option>
             <option value="0">Conte de fée</option>
             <option value="0">Médiéval</option>
@@ -156,7 +156,7 @@
 
     <div>
         <label for="animator">Présence animateur :</label>
-       <select id="animator">
+       <select id="animator" name="animator">
     <option value="0">Non (0€)</option>
     <option value="250">Oui (250€)</option>
 </select>
@@ -165,28 +165,28 @@
 
     <div id="distanceField" style="display: none;">
         <label for="distance">À quelle distance votre évènement se trouvera d'Aix en Provence? (en km)</label>
-        <input type="number" id="distance" value="0">
+        <input type="number" id="distance" value="0" name="distance">
         <abbr title="Indiquez la distance en kilomètres qui sépare votre évènement d'Aix en Provence. Les frais kilométrique de l'animateur sont à 0,50 centimes le kilomètre pour l'aller et le retour.">?</abbr>
     </div>
 
     <div>
-        <input type="checkbox" id="costumeBox" value="49.90">
+        <input type="checkbox" id="costumeBox" name="boxdeguisement" value="49.90">
         <label for="costumeBox">Box d'accessoire (49,90€) - facultatif</label>
         <abbr title="Cochez cette option si vous souhaitez recevoir une box d'accessoires pour votre jeu. Elle est en location et doit être restituée à la fin du jeu.">?</abbr>
     </div>
 
     <div>
-        <input type="checkbox" id="playerExtension" value="10">
+        <input type="checkbox" id="playerExtension" name="extension" value="10">
         <label for="playerExtension">Forfait pour étendre la murder party de 21 jusqu'à 50 joueurs (10€) - facultatif</label>
         <abbr title="Cochez cette option si vous souhaitez étendre le nombre de joueurs de votre murder party. Les packs de base sont pour 10 à 20 joueurs. Si vous êtes plus de 50, il est possible d'animer deux murders party différentes à condition de bien séparer les deux groupes.">?</abbr>
     </div>
 
     <div>
-        <button type="button" id="calculateButton">Calculer le prix total</button>
+        <button type="button" id="calculateButton" name="prix total">Calculer le prix total</button>
     </div>
 
     <div>
-        Prix total : <span id="totalPrice">0€</span>
+        Prix total : <span id="totalPrice" name="prix total 2">0€</span>
     </div>
     <p>TVA non applicable.</p>
 <button type="submit">Envoyer la demande de devis</button>
