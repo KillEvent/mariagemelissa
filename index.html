@@ -137,5 +137,26 @@
             }
 
             if (costumeBox.checked) {
-               
+               if (costumeBox.checked) {
+                total += parseFloat(costumeBox.value);
+            }
+
+            if (playerExtension.checked) {
+                total += parseFloat(playerExtension.value);
+            }
+
+            totalPrice.textContent = total.toFixed(2) + "€";
+        });
+    });
+</script>
+
+</body>
+</html>
+Avec ce code, lorsque l'utilisateur sélectionne "Oui" pour la présence d'un animateur, le champ pour indiquer la distance apparaîtra. Lorsque l'utilisateur clique sur "Calculer le prix total", le coût supplémentaire basé sur la distance sera inclus dans le calcul du prix total.
+
+
+
+
+
+
 
