@@ -23,6 +23,7 @@
 
         div {
             margin-bottom: 20px;
+            position: relative;
         }
 
         label {
@@ -58,7 +59,10 @@
             cursor: help;
             text-decoration: none;
             font-weight: bold;
-            margin-left: 5px;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
         }
     </style>
 </head>
@@ -75,6 +79,16 @@
     </div>
 
     <div>
+        <label for="scenario">Scénario choisi :</label>
+        <select id="scenario">
+            <option value="0">Transylvanie</option>
+            <option value="0">Conte de fée</option>
+            <option value="0">Médiéval</option>
+        </select>
+        <abbr title="Choisissez le scénario que vous préférez.">?</abbr>
+    </div>
+
+    <div>
         <label for="animator">Souhait présence animateur :</label>
         <select id="animator">
             <option value="250">Oui (250€)</option>
@@ -82,11 +96,11 @@
         </select>
         <abbr title="Indiquez si vous souhaitez la présence d'un animateur pour votre jeu.">?</abbr>
     </div>
-    
+
     <div id="distanceField" style="display: none;">
-        <label for="distance">Combien de kilomètres vous sépare des Bouches du Rhône ?</label>
+        <label for="distance">À quelle distance vous trouvez-vous d'Aix en Provence? (en km)</label>
         <input type="number" id="distance" value="0">
-        <abbr title="Indiquez la distance en kilomètres qui vous sépare des Bouches du Rhône.">?</abbr>
+        <abbr title="Indiquez la distance en kilomètres qui vous sépare d'Aix en Provence.">?</abbr>
     </div>
 
     <div>
@@ -137,7 +151,6 @@
             }
 
             if (costumeBox.checked) {
-               if (costumeBox.checked) {
                 total += parseFloat(costumeBox.value);
             }
 
@@ -152,8 +165,3 @@
 
 </body>
 </html>
-
-
-
-
-
