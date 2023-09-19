@@ -30,7 +30,7 @@
             margin-bottom: 10px;
         }
 
-        select, button {
+        select, button, input[type="number"] {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
@@ -52,6 +52,14 @@
         input[type="checkbox"] {
             margin-right: 10px;
         }
+
+        abbr {
+            color: #007BFF;
+            cursor: help;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 5px;
+        }
     </style>
 </head>
 <body>
@@ -63,6 +71,7 @@
             <option value="59.50">Jeu numérique (59,50€)</option>
             <option value="189.90">Jeu papier (189,90€)</option>
         </select>
+        <abbr title="Choisissez le type de jeu que vous préférez.">?</abbr>
     </div>
 
     <div>
@@ -71,16 +80,25 @@
             <option value="250">Oui (250€)</option>
             <option value="0">Non (0€)</option>
         </select>
+        <abbr title="Indiquez si vous souhaitez la présence d'un animateur pour votre jeu.">?</abbr>
+    </div>
+
+    <div id="distanceField" style="display: none;">
+        <label for="distance">Combien de kilomètres vous sépare des Bouches du Rhône ?</label>
+        <input type="number" id="distance" value="0">
+        <abbr title="Indiquez la distance en kilomètres qui vous sépare des Bouches du Rhône.">?</abbr>
     </div>
 
     <div>
         <input type="checkbox" id="costumeBox" value="49.90">
         <label for="costumeBox">Box de déguisement (49,90€)</label>
+        <abbr title="Cochez cette option si vous souhaitez recevoir une box de déguisements pour votre jeu.">?</abbr>
     </div>
 
     <div>
         <input type="checkbox" id="playerExtension" value="10">
         <label for="playerExtension">Forfait pour étendre la murder party de 21 jusqu'à 50 joueurs (10€)</label>
+        <abbr title="Cochez cette option si vous souhaitez étendre le nombre de joueurs de votre murder party.">?</abbr>
     </div>
 
     <div>
@@ -92,8 +110,32 @@
     </div>
 </form>
 
-<script src="script.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const gameType = document.getElementById("gameType");
+        const animator = document.getElementById("animator");
+        const distanceField = document.getElementById("distanceField");
+        const distance = document.getElementById("distance");
+        const costumeBox = document.getElementById("costumeBox");
+        const playerExtension = document.getElementById("playerExtension");
+        const totalPrice = document.getElementById("totalPrice");
+        const calculateButton = document.getElementById("calculateButton");
 
-</body>
-</html>
+        animator.addEventListener("change", function() {
+            if (animator.value === "250") {
+                distanceField.style.display = "block";
+            } else {
+                distanceField.style.display = "none";
+            }
+        });
+
+        calculateButton.addEventListener("click", function() {
+            let total = parseFloat(gameType.value) + parseFloat(animator.value);
+
+            if (animator.value === "250") {
+                total += parseFloat(distance.value) * 0.50;
+            }
+
+            if (costumeBox.checked) {
+               
 
