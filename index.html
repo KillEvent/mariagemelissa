@@ -228,6 +228,16 @@
             totalPrice.textContent = total.toFixed(2) + "€";
         });
     });
+    document.addEventListener("DOMContentLoaded", function() {
+    // ... autres scripts ...
+
+    const tooltips = document.querySelectorAll("abbr");
+    tooltips.forEach(function(tooltip) {
+        tooltip.addEventListener("click", function() {
+            alert(tooltip.getAttribute("title"));
+        });
+    });
+});
 </script>
 
 </body>
