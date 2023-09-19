@@ -11,13 +11,6 @@
             margin: 0;
             padding: 0;
         }
-abbr {
-    color: #007BFF; /* Couleur bleue pour les points d'interrogation */
-    cursor: help; /* Change le curseur pour indiquer qu'il s'agit d'une aide */
-    text-decoration: none; /* Supprime le soulignement par défaut */
-    font-weight: bold;
-    margin-left: 5px; /* Espacement à gauche pour séparer du champ */
-}
 
         #choiceForm {
             background-color: #fff;
@@ -79,11 +72,6 @@ abbr {
             <option value="0">Non (0€)</option>
         </select>
     </div>
-<div id="distanceField" style="display: none;">
-    <label for="distance">Combien de kilomètres vous sépare des Bouches du Rhône ?</label>
-    <input type="number" id="distance" value="0">
-    <abbr title="Indiquez la distance en kilomètres qui vous sépare des Bouches du Rhône.">?</abbr>
-</div>
 
     <div>
         <input type="checkbox" id="costumeBox" value="49.90">
@@ -102,50 +90,10 @@ abbr {
     <div>
         Prix total : <span id="totalPrice">0€</span>
     </div>
-   
-<!-- ... -->
-<div>
-    <label for="gameType">Type de jeu :</label>
-    <select id="gameType">
-        <option value="59.50">Jeu numérique (59,50€)</option>
-        <option value="189.90">Jeu papier (189,90€)</option>
-    </select>
-    <abbr title="Choisissez le type de jeu que vous préférez.">?</abbr>
-</div>
-
-<div>
-    <label for="animator">Souhait présence animateur :</label>
-    <select id="animator">
-        <option value="250">Oui (250€)</option>
-        <option value="0">Non (0€)</option>
-    </select>
-    <abbr title="Indiquez si vous souhaitez la présence d'un animateur pour votre jeu.">?</abbr>
-</div>
-
-<div>
-    <input type="checkbox" id="costumeBox" value="49.90">
-    <label for="costumeBox">Box de déguisement (49,90€)</label>
-    <abbr title="Cochez cette option si vous souhaitez recevoir une box de déguisements pour votre jeu.">?</abbr>
-</div>
-
-<div>
-    <input type="checkbox" id="playerExtension" value="10">
-    <label for="playerExtension">Forfait pour étendre la murder party de 21 jusqu'à 50 joueurs (10€)</label>
-    <abbr title="Cochez cette option si vous souhaitez étendre le nombre de joueurs de votre murder party.">?</abbr>
-</div>
-<!-- ... -->
-
 </form>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const gameType = document.getElementById("gameType");
-        const animator = document.getElementById("animator");
-        const costumeBox = document.getElementById("costumeBox");
-        const playerExtension = document.getElementById("playerExtension");
-        const totalPrice = document.getElementById("totalPrice");
-        const calculateButton = document.getElementById("calculateButton");
+<script src="script.js"></script>
 
-        calculateButton.addEventListener("click", function() {
-            let total = parseFloat(gameType
+</body>
+</html>
 
