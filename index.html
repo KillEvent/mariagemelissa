@@ -4,7 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire de choix</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        #choiceForm {
+            background-color: #fff;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        div {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        select, button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
 
@@ -44,8 +92,15 @@
     </div>
 </form>
 
-<script src="script.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const gameType = document.getElementById("gameType");
+        const animator = document.getElementById("animator");
+        const costumeBox = document.getElementById("costumeBox");
+        const playerExtension = document.getElementById("playerExtension");
+        const totalPrice = document.getElementById("totalPrice");
+        const calculateButton = document.getElementById("calculateButton");
 
-</body>
-</html>
+        calculateButton.addEventListener("click", function() {
+            let total = parseFloat(gameType
 
