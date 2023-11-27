@@ -3,242 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire de choix</title>
+    <title>Magie et Mystère</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        #choiceForm {
-            background-color: #fff;
-            max-width: 500px;
-            margin: 50px auto;
+            text-align: center;
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        div {
-            margin-bottom: 20px;
-            position: relative;
+        .sorcerer {
+            max-width: 300px;
+            margin: 20px auto;
         }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        select, button, input[type="number"] {
-            width: 100%;
+        #magicWord {
+            margin-top: 20px;
+            font-size: 18px;
             padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
+            width: 200px;
         }
-
-         select, button, input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
+        #wakeUpMessage {
+            color: green;
+            margin-top: 20px;
+            display: none;
         }
-
-        button {
-            background-color: #007BFF;
-            color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        input[type="checkbox"] {
-            margin-right: 10px;
-        }
-
-        abbr {
-    color: #fff; /* couleur blanche pour le point d'interrogation */
-    background-color: #007BFF; /* couleur de fond bleue */
-    cursor: help;
-    text-decoration: none;
-    font-weight: bold;
-    position: absolute;
-    right: -25px; /* ajustement pour le positionnement */
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 50%; /* rend le fond circulaire */
-    width: 20px; /* largeur du cercle */
-    height: 20px; /* hauteur du cercle */
-    text-align: center; /* centre le point d'interrogation dans le cercle */
-    line-height: 20px; /* aligne verticalement le point d'interrogation dans le cercle */
-             top: 70%;
-             cursor: pointer;
-}
-
-@media (max-width: 600px) {
-    abbr {
-        right: -30px;
-    }
-}
-
-#choiceForm {
-    /* ... autres styles ... */
-    box-sizing: border-box;
-    padding-left: 15%;
-    padding-right: 15%;
-}
-
-
-
     </style>
 </head>
 <body>
+    <h1>Bienvenue dans le Monde de la Magie</h1>
+    <img src="sorcerer_sleeping.png" alt="Sorcier qui dort" class="sorcerer" id="sorcererImage">
+    <input type="text" id="magicWord" placeholder="Tapez 'ATCHOUM' ici">
+    <p id="wakeUpMessage">Le sorcier se réveille !</p>
 
-<form id="choiceForm" action="https://formspree.io/f/xbjvaqle" method="POST">
-    <div>
-    <label for="firstName" >Nom Prénom* :</label>
-    <input type="text" id="firstName" name="firstName" required>
-</div>
-
-<div>
-    <label for="companyName" >Nom de l'entreprise :</label>
-    <input type="text" id="companyName" name="companyName">
-</div>
-
-<div>
-    <label for="email" >Adresse e-mail* :</label>
-    <input type="email" id="email" name="email" required>
-</div>
-
-<div>
-    <label for="phone">Téléphone :</label>
-    <input type="tel" id="phone" name="phone">
-</div>
-
-<div>
-    <label for="eventAddress">Adresse de l'évènement :</label>
-    <input type="text" id="eventAddress" name="eventAddress">
-</div>
-
-<div>
-    <label for="participantCount">Nombre de participants : (à partir de 51 participants, nous faisons deux murder party)</label>
-    <input type="number" id="participantCount" name="participantCount">
-</div>
-
-  <div>
-    <label for="gameType">Type de jeu :</label>
-        <select id="gameType" name="gameType">
-            <option value="59.50">Jeu numérique (59,50€)</option>
-            <option value="189.90">Jeu papier (189,90€)</option>
-        </select>
-        <abbr title="Choisissez le type de jeu que vous préférez.">?</abbr>
-    </div>
-
-    
-
-    <div>
-        <label for="scenario">Scénario choisi :</label>
-        <select id="scenario" name="scenario">
-            <option value="transylvanie">Transylvanie</option>
-            <option value="conte de fée">Conte de fée</option>
-            <option value="médiéval">Médiéval</option>
-        </select>
-        <abbr title="Choisissez le scénario souhaité. Si vous souhaitez une offre sur mesure, veuillez nous contacter.">?</abbr>
-    </div>
-
-    <div>
-        <label for="animator">Présence animateur :</label>
-       <select id="animator" name="animator">
-    <option value="0">Non (0€)</option>
-    <option value="250">Oui (250€)</option>
-</select>
-        <abbr title="Indiquez si vous souhaitez la présence d'un animateur pour votre jeu. Si vous souhaitez la présence d'un animateur, les frais kilométrique sont à renseigné ci-dessous.">?</abbr>
-    </div>
-
-    <div id="distanceField" style="display: none;">
-        <label for="distance">À quelle distance votre évènement se trouvera d'Aix en Provence? (en km)</label>
-        <input type="number" id="distance" value="0" name="distance">
-        <abbr title="Indiquez la distance en kilomètres qui sépare votre évènement d'Aix en Provence. Les frais kilométrique de l'animateur sont à 0,50 centimes le kilomètre pour l'aller et le retour.">?</abbr>
-    </div>
-
-    <div>
-        <input type="checkbox" id="costumeBox" name="boxdeguisement" value="49.90">
-        <label for="costumeBox">Box d'accessoire (49,90€) - facultatif</label>
-        <abbr title="Cochez cette option si vous souhaitez recevoir une box d'accessoires pour votre jeu. Elle est en location et doit être restituée à la fin du jeu.">?</abbr>
-    </div>
-
-    <div>
-        <input type="checkbox" id="playerExtension" name="extension" value="10">
-        <label for="playerExtension">Forfait pour étendre la murder party de 21 jusqu'à 50 joueurs (10€) - facultatif</label>
-        <abbr title="Cochez cette option si vous souhaitez étendre le nombre de joueurs de votre murder party. Les packs de base sont pour 10 à 20 joueurs. Si vous êtes plus de 50, il est possible d'animer deux murders party différentes à condition de bien séparer les deux groupes.">?</abbr>
-    </div>
-
-    <div>
-        <button type="button" id="calculateButton" name="prix total">Calculer le prix total</button>
-    </div>
-
-    <div>
-        Prix total : <span id="totalPrice" name="prix total 2">0€</span>
-    </div>
-    
-<button type="submit">Envoyer la demande de devis</button>
-<p>TVA non applicable, article 293B du CGI.</p>
-</form>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const gameType = document.getElementById("gameType");
-        const animator = document.getElementById("animator");
-        const distanceField = document.getElementById("distanceField");
-        const distance = document.getElementById("distance");
-        const costumeBox = document.getElementById("costumeBox");
-        const playerExtension = document.getElementById("playerExtension");
-        const totalPrice = document.getElementById("totalPrice");
-        const calculateButton = document.getElementById("calculateButton");
-
-        animator.addEventListener("change", function() {
-            if (animator.value === "250") {
-                distanceField.style.display = "block";
+    <script>
+        document.getElementById('magicWord').addEventListener('input', function(e) {
+            if (e.target.value.toUpperCase() === 'ATCHOUM') {
+                document.getElementById('wakeUpMessage').style.display = 'block';
+                document.getElementById('sorcererImage').src = 'sorcerer_awake.png'; // Remplacez par l'image du sorcier réveillé
             } else {
-                distanceField.style.display = "none";
+                document.getElementById('wakeUpMessage').style.display = 'none';
+                document.getElementById('sorcererImage').src = 'sorcerer_sleeping.png'; // Remplacez par l'image du sorcier dormant
             }
         });
-
-        calculateButton.addEventListener("click", function() {
-            let total = parseFloat(gameType.value) + parseFloat(animator.value);
-
-            if (animator.value === "250") {
-                total += parseFloat(distance.value) * 1;
-            }
-
-            if (costumeBox.checked) {
-                total += parseFloat(costumeBox.value);
-            }
-
-            if (playerExtension.checked) {
-                total += parseFloat(playerExtension.value);
-            }
-
-            totalPrice.textContent = total.toFixed(2) + "€";
-        });
-    });
-    document.addEventListener("DOMContentLoaded", function() {
-    // ... autres scripts ...
-
-    const tooltips = document.querySelectorAll("abbr");
-    tooltips.forEach(function(tooltip) {
-        tooltip.addEventListener("click", function() {
-            alert(tooltip.getAttribute("title"));
-        });
-    });
-});
-</script>
-
+    </script>
 </body>
 </html>
+
