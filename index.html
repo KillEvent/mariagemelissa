@@ -6,25 +6,40 @@
     <title>Magie et Mystère</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #e0d8c3;
+            background-image: url('background_magic.png'); /* Une image d'arrière-plan thématique */
             text-align: center;
             padding: 20px;
         }
         .sorcerer {
             max-width: 300px;
             margin: 20px auto;
+            transition: transform 0.5s ease;
+        }
+        .sorcerer:hover {
+            transform: scale(1.1); /* Effet de zoom au survol */
         }
         #magicWord {
             margin-top: 20px;
             font-size: 18px;
             padding: 10px;
             width: 200px;
+            border-radius: 10px;
+            border: 2px solid #8b4513;
         }
-        #wakeUpMessage {
-            color: green;
+        #wakeUpMessage, #sorcererSpeech {
+            color: #5c2a29;
             margin-top: 20px;
             display: none;
+            font-style: italic;
+        }
+        .magicEffect {
+            color: #4e9a06;
+            animation: blinker 1s linear infinite;
+        }
+        @keyframes blinker {
+            50% { opacity: 0; }
         }
     </style>
 </head>
@@ -32,19 +47,23 @@
     <h1>Bienvenue dans le Monde de la Magie</h1>
     <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/DALL_E_2023-11-27_18.04.45_-_A_wizard_sleeping_depicted_with_a_long_flowing_beard_wearing_a_pointed_hat_and_robes_adorned_with_stars_and_moons_lying_in_a_relaxed_position._The.png?v=1701104720" alt="Sorcier qui dort" class="sorcerer" id="sorcererImage">
     <input type="text" id="magicWord" placeholder="Tapez 'ATCHOUM' ici">
-    <p id="wakeUpMessage">Le sorcier se réveille !</p>
+    <p id="wakeUpMessage" class="magicEffect">Le sorcier se réveille !</p>
+    <p id="sorcererSpeech">"Ah, enfin réveillé ! J'ai rêvé que j'étais un crapaud..."</p>
 
     <script>
         document.getElementById('magicWord').addEventListener('input', function(e) {
             if (e.target.value.toUpperCase() === 'ATCHOUM') {
                 document.getElementById('wakeUpMessage').style.display = 'block';
+                document.getElementById('sorcererSpeech').style.display = 'block';
                 document.getElementById('sorcererImage').src = 'https://cdn.shopify.com/s/files/1/0726/0690/8753/files/DALL_E_2023-11-27_18.07.03_-_A_wizard_depicted_with_a_long_flowing_beard_wearing_a_pointed_hat_and_robes_adorned_with_stars_and_moons_now_awake_and_standing._He_has_his_eyes_wid.png?v=1701104836'; // Remplacez par l'image du sorcier réveillé
             } else {
                 document.getElementById('wakeUpMessage').style.display = 'none';
+                document.getElementById('sorcererSpeech').style.display = 'none';
                 document.getElementById('sorcererImage').src = 'https://cdn.shopify.com/s/files/1/0726/0690/8753/files/DALL_E_2023-11-27_18.04.45_-_A_wizard_sleeping_depicted_with_a_long_flowing_beard_wearing_a_pointed_hat_and_robes_adorned_with_stars_and_moons_lying_in_a_relaxed_position._The.png?v=1701104720'; // Remplacez par l'image du sorcier dormant
             }
         });
     </script>
 </body>
 </html>
+
 
