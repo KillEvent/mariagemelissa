@@ -12,7 +12,7 @@
             padding: 20px;
         }
         .sorcerer {
-            max-width: 300px;
+            max-width: 500px; /* Modifié à 500px */
             margin: 20px auto;
             transition: transform 0.5s ease;
         }
@@ -44,7 +44,7 @@
 </head>
 <body>
     <h1>Bienvenue dans le Monde de la Magie</h1>
-    <img src="sorcierquidort.gif">
+    <img src="sorcierquidort.gif" class="sorcerer" id="sorcererImage"> <!-- Ajout de la classe et de l'ID -->
     <input type="text" id="magicWord" placeholder="Tapez 'ATCHOUM' ici">
     <p id="wakeUpMessage" class="magicEffect">Le sorcier se réveille !</p>
     <p id="sorcererSpeech">"Ah, enfin réveillé ! J'ai rêvé que j'étais un crapaud..."</p>
@@ -54,15 +54,14 @@
             if (e.target.value.toUpperCase() === 'ATCHOUM') {
                 document.getElementById('wakeUpMessage').style.display = 'block';
                 document.getElementById('sorcererSpeech').style.display = 'block';
-                document.getElementById('sorcererImage').src = 'sorcierreveil.png'; // Remplacez par l'image du sorcier réveillé
+                document.getElementById('sorcererImage').src = 'sorcierreveil.png'; // Image du sorcier réveillé
             } else {
                 document.getElementById('wakeUpMessage').style.display = 'none';
                 document.getElementById('sorcererSpeech').style.display = 'none';
-                document.getElementById('sorcererImage').src = 'sorcierquidort.gif'; // Remplacez par l'image du sorcier dormant
+                document.getElementById('sorcererImage').src = 'sorcierquidort.gif'; // Image du sorcier dormant
             }
         });
     </script>
 </body>
 </html>
-
 
