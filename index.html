@@ -94,19 +94,22 @@
    <button id="redirectButton" style="display:none;">Parler au sorcier</button>
     <p id="sorcererSpeech">"Ah, enfin réveillé ! J'ai rêvé que j'étais un crapaud..."</p>
 
-    <script>
-        document.getElementById('magicWord').addEventListener('input', function(e) {
-            if (e.target.value.toUpperCase() === 'NOCULUSPOCUS') {
-                document.getElementById('wakeUpMessage').style.display = 'block';
-                document.getElementById('sorcererSpeech').style.display = 'block';
-                document.getElementById('sorcererImage').src = 'sorcierreveill.png';
-            } else {
-                document.getElementById('wakeUpMessage').style.display = 'none';
-                document.getElementById('sorcererSpeech').style.display = 'none';
-                document.getElementById('sorcererImage').src = 'sorcierquidortt.gif';
-            }
-        });
-    </script>
+   <script>
+    document.getElementById('magicWord').addEventListener('input', function(e) {
+        if (e.target.value.toUpperCase() === 'NOCULUSPOCUS') {
+            document.getElementById('wakeUpMessage').style.display = 'block';
+            document.getElementById('sorcererSpeech').style.display = 'block';
+            document.getElementById('sorcererImage').src = 'sorcierreveill.png';
+            // Afficher le bouton de redirection
+            document.getElementById('redirectButton').style.display = 'block';
+        } else {
+            document.getElementById('wakeUpMessage').style.display = 'none';
+            document.getElementById('sorcererSpeech').style.display = 'none';
+            document.getElementById('sorcererImage').src = 'sorcierquidortt.gif';
+            // Cacher le bouton de redirection
+            document.getElementById('redirectButton').style.display = 'none';
+        }
+    });
 </body>
 </html>
 
