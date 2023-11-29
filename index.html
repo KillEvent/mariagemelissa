@@ -92,33 +92,22 @@
          <span class="dot"></span>
         </div>
     <input type="text" id="magicWord" placeholder="As tu trouvé le sort?">
-   <button id="redirectButton" style="display:none;">Parler au sorcier</button>
+    <p id="wakeUpMessage" class="magicEffect">Le sorcier se réveille !</p>
     <p id="sorcererSpeech">"Ah, enfin réveillé ! J'ai rêvé que j'étais un crapaud..."</p>
 
-
-<script>
-    document.getElementById('magicWord').addEventListener('input', function(e) {
-        if (e.target.value.toUpperCase() === 'NOCULUSPOCUS') {
-            document.getElementById('wakeUpMessage').style.display = 'block';
-            document.getElementById('sorcererSpeech').style.display = 'block';
-            document.getElementById('sorcererImage').src = 'sorcierreveill.png';
-            // Afficher le bouton de redirection
-            document.getElementById('redirectButton').style.display = 'block';
-        } else {
-            document.getElementById('wakeUpMessage').style.display = 'none';
-            document.getElementById('sorcererSpeech').style.display = 'none';
-            document.getElementById('sorcererImage').src = 'sorcierquidortt.gif';
-            // Cacher le bouton de redirection
-            document.getElementById('redirectButton').style.display = 'none';
-        }
-    });
-
-    // Redirection lorsque le bouton est cliqué
-    document.getElementById('redirectButton').addEventListener('click', function() {
-        window.location.href = 'https://killevent.github.io/mariagemelissa/';
-    });
-</script>
+    <script>
+        document.getElementById('magicWord').addEventListener('input', function(e) {
+            if (e.target.value.toUpperCase() === 'NOCULUSPOCUS') {
+                document.getElementById('wakeUpMessage').style.display = 'block';
+                document.getElementById('sorcererSpeech').style.display = 'block';
+                document.getElementById('sorcererImage').src = 'sorcierreveill.png';
+            } else {
+                document.getElementById('wakeUpMessage').style.display = 'none';
+                document.getElementById('sorcererSpeech').style.display = 'none';
+                document.getElementById('sorcererImage').src = 'sorcierquidortt.gif';
+            }
+        });
+    </script>
 </body>
 </html>
-
 
