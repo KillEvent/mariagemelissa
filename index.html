@@ -5,71 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magie et Mystère</title>
     <style>
-        body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: #FFFFF;
-            text-align: center;
-            padding: 20px;
-        }
-        .sorcerer {
-            max-width: 100%; /* Les images utilisent maintenant 100% de la largeur disponible */
-            height: auto; /* Hauteur auto pour maintenir le ratio */
-            margin: 20px auto;
-            transition: transform 0.5s ease;
-        }
-        .sorcerer:hover {
-            transform: scale(1.1);
-        }
-        #magicWord {
-            margin-top: 20px;
-            font-size: 1em; /* Utilisez em pour les tailles de police */
-            padding: 10px;
-            width: 60%; /* Largeur relative */
-            border-radius: 10px;
-            border: 2px solid #8b4513;
-        }
-        #wakeUpMessage, #sorcererSpeech {
-            color: #5c2a29;
-            margin-top: 20px;
-            display: none;
-            font-style: italic;
-        }
-        .magicEffect {
-            color: #4e9a06;
-            animation: blinker 1s linear infinite;
-        }
-        @keyframes blinker {
-            50% { opacity: 0; }
-        }
-        @media (max-width: 600px) { /* Media query pour les écrans plus petits */
-            #magicWord {
-                width: 80%; /* Augmente la largeur sur les petits écrans */
-            }
-        }
-        .dots {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        .dot {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: #000; /* Couleur par défaut */
-        }
-        /* Définissez des couleurs spécifiques pour chaque point */
-        .dot:nth-child(1) { background-color: grey; }
-        .dot:nth-child(2) { background-color: #FA8072; }
-        .dot:nth-child(3) { background-color: #87CEEB; }
-        .dot:nth-child(4) { background-color: orange; }
-        .dot:nth-child(5) { background-color: #FFDB58; }
-        .dot:nth-child(6) { background-color: #A16E49; }
-        .dot:nth-child(7) { background-color: violet; }
-        .dot:nth-child(8) { background-color: red; }
-        .dot:nth-child(9) { background-color: #F7F7F7; }
-        .dot:nth-child(10) { background-color: beige; }
-        .dot:nth-child(11) { background-color: #808000; }
-        .dot:nth-child(12) { background-color: #808000; }
+        /* Vos styles CSS ici */
         .hidden {
             display: none;
         }
@@ -92,20 +28,7 @@
     <img src="sorcierquidortt.gif" class="sorcerer" id="sorcererImage">
     <p>Trouve vite le sort qui te permettra de réveiller le sorcier et de lui parler, grâce aux indices contenu dans l'enveloppe!</p>
     <div class="dots">
-      <div class="dots">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-         <span class="dot"></span>
-        </div>
+        <!-- Vos points ici -->
     </div>
     <input type="text" id="magicWord" placeholder="As tu trouvé le sort?">
     <p id="wakeUpMessage" class="magicEffect hidden">Le sorcier se réveille !</p>
@@ -113,15 +36,23 @@
     <a href="https://killevent.github.io/mariagemelissa/" class="button-like hidden" id="redirectLink">Parler au sorcier</a>
 
     <script>
-        document.getElementById('magicWord').addEventListener('input', function(e) {
-            var showElements = e.target.value.toUpperCase() === 'NOCULUSPOCUS';
+        function updateDisplay(value) {
+            var showElements = value.toUpperCase() === 'NOCULUSPOCUS';
             document.getElementById('wakeUpMessage').style.display = showElements ? 'block' : 'none';
             document.getElementById('sorcererSpeech').style.display = showElements ? 'block' : 'none';
             document.getElementById('sorcererImage').src = showElements ? 'sorcierreveill.png' : 'sorcierquidortt.gif';
             document.getElementById('redirectLink').style.display = showElements ? 'block' : 'none';
+        }
+
+        document.getElementById('magicWord').addEventListener('input', function(e) {
+            updateDisplay(e.target.value);
         });
+
+        // Assurez-vous que le bouton est caché au chargement de la page
+        window.onload = function() {
+            updateDisplay('');
+        };
     </script>
 </body>
 </html>
-
 
