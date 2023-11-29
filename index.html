@@ -94,7 +94,8 @@
    <button id="redirectButton" style="display:none;">Parler au sorcier</button>
     <p id="sorcererSpeech">"Ah, enfin réveillé ! J'ai rêvé que j'étais un crapaud..."</p>
 
-   <script>
+
+<script>
     document.getElementById('magicWord').addEventListener('input', function(e) {
         if (e.target.value.toUpperCase() === 'NOCULUSPOCUS') {
             document.getElementById('wakeUpMessage').style.display = 'block';
@@ -110,7 +111,7 @@
             document.getElementById('redirectButton').style.display = 'none';
         }
     });
-       
+
     // Redirection lorsque le bouton est cliqué
     document.getElementById('redirectButton').addEventListener('click', function() {
         window.location.href = 'https://killevent.github.io/mariagemelissa/';
