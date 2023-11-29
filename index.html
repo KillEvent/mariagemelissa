@@ -110,7 +110,7 @@
          <span class="dot"></span>
         </div>
     <input type="text" id="magicWord" placeholder="As tu trouvé le sort?">
-    <button id="redirectButton" style="display:none;">Parler au sorcier</button>
+  <a href="https://killevent.github.io/mariagemelissa/" class="button-like hidden" id="redirectLink">Parler au sorcier</a>
     <p id="wakeUpMessage" class="magicEffect">Le sorcier se réveille !</p>
     <p id="sorcererSpeech">"Ah, enfin réveillé ! J'ai rêvé que j'étais un crapaud..."</p>
 
@@ -120,12 +120,12 @@
                 document.getElementById('wakeUpMessage').style.display = 'block';
                 document.getElementById('sorcererSpeech').style.display = 'block';
                 document.getElementById('sorcererImage').src = 'sorcierreveill.png';
-                document.getElementById('redirectButton').style.display = 'block';
+                document.getElementById('redirectLink').style.display = showElements ? 'block' : 'none';
             } else {
                 document.getElementById('wakeUpMessage').style.display = 'none';
                 document.getElementById('sorcererSpeech').style.display = 'none';
                 document.getElementById('sorcererImage').src = 'sorcierquidortt.gif';
-                document.getElementById('redirectButton').style.display = 'none';
+                 document.getElementById('redirectLink').style.display = showElements ? 'block' : 'none';
             }
         
         });
