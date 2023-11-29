@@ -12,18 +12,19 @@
             padding: 20px;
         }
         .sorcerer {
-            max-width: 500px; /* Modifié à 500px */
+            max-width: 100%; /* Les images utilisent maintenant 100% de la largeur disponible */
+            height: auto; /* Hauteur auto pour maintenir le ratio */
             margin: 20px auto;
             transition: transform 0.5s ease;
         }
         .sorcerer:hover {
-            transform: scale(1.1); /* Effet de zoom au survol */
+            transform: scale(1.1);
         }
         #magicWord {
             margin-top: 20px;
-            font-size: 18px;
+            font-size: 1em; /* Utilisez em pour les tailles de police */
             padding: 10px;
-            width: 200px;
+            width: 60%; /* Largeur relative */
             border-radius: 10px;
             border: 2px solid #8b4513;
         }
@@ -40,11 +41,16 @@
         @keyframes blinker {
             50% { opacity: 0; }
         }
+        @media (max-width: 600px) { /* Media query pour les écrans plus petits */
+            #magicWord {
+                width: 80%; /* Augmente la largeur sur les petits écrans */
+            }
+        }
     </style>
 </head>
 <body>
     <h1>Bienvenue dans le Monde de la Magie</h1>
-    <img src="sorcierquidort.gif" class="sorcerer" id="sorcererImage"> <!-- Ajout de la classe et de l'ID -->
+    <img src="sorcierquidort.gif" class="sorcerer" id="sorcererImage">
     <input type="text" id="magicWord" placeholder="Tapez 'ATCHOUM' ici">
     <p id="wakeUpMessage" class="magicEffect">Le sorcier se réveille !</p>
     <p id="sorcererSpeech">"Ah, enfin réveillé ! J'ai rêvé que j'étais un crapaud..."</p>
@@ -54,14 +60,15 @@
             if (e.target.value.toUpperCase() === 'ATCHOUM') {
                 document.getElementById('wakeUpMessage').style.display = 'block';
                 document.getElementById('sorcererSpeech').style.display = 'block';
-                document.getElementById('sorcererImage').src = 'sorcierreveil.png'; // Image du sorcier réveillé
+                document.getElementById('sorcererImage').src = 'sorcierreveil.png';
             } else {
                 document.getElementById('wakeUpMessage').style.display = 'none';
                 document.getElementById('sorcererSpeech').style.display = 'none';
-                document.getElementById('sorcererImage').src = 'sorcierquidort.gif'; // Image du sorcier dormant
+                document.getElementById('sorcererImage').src = 'sorcierquidort.gif';
             }
         });
     </script>
 </body>
 </html>
+
 
