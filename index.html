@@ -23,16 +23,16 @@
 <body>
     <div class="container">
         <h1>Bravo!</h1>
-        <p>Vous avez déchiffré l'énigme! Les goules, impressionnées par votre perspicacité, vous ont laissé entrer.</p>
-        <p>Vous pouvez maintenant participer à la murder party. Préparez-vous à interroger les autres suspects et à dévoiler le mystère!</p>
+        <p>Si vous souhaitez obtenir votre surprise, allez voir Axelle, la témoin du mariage, et dites lui:</p>
+        <p>"J'ai cueilli les lettres comme des lavandes, où est ma récompense provençale ?"</p>
     </div>
 
     <script>
-        var motDePasseCorrect = "9875"; // Remplacez "1234" par votre mot de passe
+        var motDePasseCorrect = "citronnier"; // Remplacez "1234" par votre mot de passe
         var motDePasse;
         
         do {
-            motDePasse = prompt("Entrez le mot de passe à 4 chiffres:");
+            motDePasse = prompt("Entrez le mot magique:");
             
             if (motDePasse === motDePasseCorrect) {
                 document.querySelector('.container').style.display = 'block';
