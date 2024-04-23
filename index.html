@@ -28,19 +28,22 @@
     </div>
 
 
-    <script>
-        var motDePasseCorrect = "citronnier"; // Remplacez "1234" par votre mot de passe
+     <script>
+        var motDePasseCorrect = "citronnier"; // Remplacez "citronnier" par votre mot de passe
         var motDePasse;
-        
+
         do {
             motDePasse = prompt("Entrez le mot magique:");
-            
-            if (motDePasse === motDePasseCorrect) {
-                document.querySelector('.container').style.display = 'block';
-            } else if (motDePasse !== null) { // Vérifie si l'utilisateur n'a pas cliqué sur "Annuler"
-                alert("Mot de passe incorrect! Veuillez réessayer.");
+
+            if (motDePasse !== null) { // Vérifie si l'utilisateur n'a pas cliqué sur "Annuler"
+                motDePasse = motDePasse.toLowerCase(); // Convertir le mot de passe entré en minuscules
+                if (motDePasse === motDePasseCorrect.toLowerCase()) {
+                    document.querySelector('.container').style.display = 'block';
+                } else {
+                    alert("Mot de passe incorrect! Veuillez réessayer.");
+                }
             }
-        } while (motDePasse !== motDePasseCorrect && motDePasse !== null);
+        } while (motDePasse !== motDePasseCorrect.toLowerCase() && motDePasse !== null);
     </script>
 </body>
 </html>
