@@ -27,21 +27,24 @@
         <p>"J'ai cueilli les lettres comme des lavandes, où est ma récompense provençale ?"</p>
     </div>
 
-  <script>
-        var motDePasseCorrect = "CITRONNIER"; // Remplacez "1234" par votre mot de passe
+
+    <script>
+        var motDePasseCorrect = "citronnier"; // Remplacez "1234" par votre mot de passe
+        var motDePasse;
         
-        document.querySelector('.password-popup').style.display = 'block';
-        
-        function checkPassword() {
-            var motDePasse = document.getElementById('passwordInput').value;
+        do {
+            motDePasse = prompt("Entrez le mot magique:");
+            
             if (motDePasse === motDePasseCorrect) {
-                document.querySelector('.password-popup').style.display = 'none';
                 document.querySelector('.container').style.display = 'block';
-            } else {
+            } else if (motDePasse !== null) { // Vérifie si l'utilisateur n'a pas cliqué sur "Annuler"
                 alert("Mot de passe incorrect! Veuillez réessayer.");
             }
-        }
+        } while (motDePasse !== motDePasseCorrect && motDePasse !== null);
     </script>
 </body>
 </html>
+
+
+
 
